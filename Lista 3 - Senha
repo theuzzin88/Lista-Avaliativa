@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int senha_cadastrada, senha_inserida;
+    int tentativas = 3;
+
+    printf("Digite uma senha de 4 digitos para o cadastro:");
+    scanf("%d", &senha_cadastrada);
+
+
+
+    if (senha_cadastrada < 1000 || senha_cadastrada > 9999) {
+        printf("Senha invalida. A senha deve ter 4 digitos.\n");
+        return 1;
+    }
+
+    printf("senha cadastrada: %04d\n", senha_cadastrada);
+
+    while (tentativas > 0) {
+
+        printf("Digite a senha para validacao: ");
+        scanf("%d", &senha_inserida);
+
+
+        if (senha_inserida == senha_cadastrada) {
+            printf("senha valida!\n");
+            break;
+
+        } else {
+            printf("senha invalida!\n", tentativas - 1);
+            tentativas--;
+        }
+    }
+
+    if (tentativas == 0) {
+        printf("Limite de tentativas. Acesso bloqueado.\n");
+    }
+
+    return 0;
+}
