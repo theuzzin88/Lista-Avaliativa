@@ -3,41 +3,30 @@
 int main() {
     char nivel_experiencia;
     double salario_atual, aumento, novo_salario;
-    char continuar;
 
-    do {
+    // Ler o nível de experiência do funcionário e o salário atual
+    scanf(" %c", &nivel_experiencia);
+    scanf("%lf", &salario_atual);
 
-        printf("Informe o nivel de experiencia do funcionario (a, b ou c):");
-        scanf(" %c", &nivel_experiencia);
-        
-        printf("Informe o salario atual do funcionario:");
-        scanf("%lf", &salario_atual);
+    switch (nivel_experiencia) {
+        case 'a':
+            aumento = salario_atual * 0.05;
+            break;
+        case 'b':
+            aumento = salario_atual * 0.07;
+            break;
+        case 'c':
+            aumento = salario_atual * 0.08;
+            break;
+        default:
+            aumento = 0;
+            break;
+    }
 
-        switch (nivel_experiencia) {
-            case 'a':
-                aumento = salario_atual * 0.05;
-                break;
-            case 'b':
-                aumento = salario_atual * 0.07;
-                break;
-            case 'c':
-                aumento = salario_atual * 0.08;
-                break;
-            default:
-                aumento = 0;
-                break;
-        }
+    // Calcular o novo salário
+    novo_salario = salario_atual + aumento;
 
-        novo_salario = salario_atual + aumento;
-
-
-        printf("Novo salario: R$ %.2lf\n", novo_salario);
-
-        // Perguntar se deseja continuar
-        printf("Deseja informar outro funcionario? (S/N): ");
-        scanf(" %c", &continuar);
-
-    } while (continuar == 'S' || continuar == 's');
+    printf("R$ %.2lf\n", novo_salario);
 
     return 0;
 }
