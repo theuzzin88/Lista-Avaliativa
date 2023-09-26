@@ -3,7 +3,7 @@
 int main() {
     int numero, digito, soma = 0;
 
-    printf("Digite um numero:");
+
     scanf("%d", &numero);
 
     if (numero < 0 || numero > 1000000000) {
@@ -18,13 +18,13 @@ int main() {
     }
 
     int temp = numero;
-      while (temp > 0) {
+    while (temp > 0) {
         digito = temp % 10;
         soma += digito;
         temp /= 10;
     }
 
-    printf("A soma dos algarismos de %d eh igual a %d\n", numero, soma);
+    printf("A soma dos algarismos de %d eh %d\n", numero, soma);
 
     return 0;
 }
