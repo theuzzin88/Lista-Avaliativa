@@ -4,7 +4,7 @@ int main() {
     int senha_cadastrada, senha_inserida;
     int tentativas = 3;
 
-    printf("Digite uma senha de 4 digitos para o cadastro:");
+
     scanf("%d", &senha_cadastrada);
 
 
@@ -18,7 +18,6 @@ int main() {
 
     while (tentativas > 0) {
 
-        printf("Digite a senha para validacao: ");
         scanf("%d", &senha_inserida);
 
 
